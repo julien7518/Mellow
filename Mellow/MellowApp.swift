@@ -11,7 +11,7 @@ import SwiftUI
 struct MellowApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
