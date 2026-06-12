@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F9E44C262FDC1973006D345E /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = F9E44C252FDC196D006D345E /* LICENSE.md */; };
+		F9E44C282FDC19D0006D345E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F9E44C272FDC19C6006D345E /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		F9B5349A2FD8A7C30021B48B /* Mellow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mellow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9E44C252FDC196D006D345E /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		F9E44C272FDC19C6006D345E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +39,8 @@
 		F9B534912FD8A7C30021B48B = {
 			isa = PBXGroup;
 			children = (
+				F9E44C252FDC196D006D345E /* LICENSE.md */,
+				F9E44C272FDC19C6006D345E /* README.md */,
 				F9B5349C2FD8A7C30021B48B /* Mellow */,
 				F9B5349B2FD8A7C30021B48B /* Products */,
 			);
@@ -109,6 +118,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E44C282FDC19D0006D345E /* README.md in Resources */,
+				F9E44C262FDC1973006D345E /* LICENSE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

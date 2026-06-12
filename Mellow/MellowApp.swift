@@ -13,5 +13,9 @@ struct MellowApp: App {
         WindowGroup {
             MainView()
         }
+        .windowResizability(.contentSize)
+        .windowStyle(.hiddenTitleBar)
+        .windowLevel(WindowLevel.floating)
+        .defaultSize(width: 330, height: 160)
     }
 }

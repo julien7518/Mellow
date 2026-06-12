@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  Mellow
 //
 //  Created by Julien Fernandes on 09/06/2026.
@@ -59,7 +59,7 @@ struct MainView: View {
                 .padding(10)
             }
             .padding(10)
-            .frame(maxWidth: 330, maxHeight: 160)
+            .frame(width: 330, height: 160)
         }
     }
 }
