@@ -10,12 +10,14 @@ import SwiftUI
 @main
 struct MellowApp: App {
     var body: some Scene {
-        WindowGroup {
+        Window("Mellow", id: "MellowApp") {
             MainView()
+                .windowDismissBehavior(.disabled)
+                .windowFullScreenBehavior(.disabled)
+                .windowMinimizeBehavior(.disabled)
         }
         .windowResizability(.contentSize)
         .windowStyle(.hiddenTitleBar)
         .windowLevel(WindowLevel.floating)
-        .defaultSize(width: 330, height: 160)
     }
 }

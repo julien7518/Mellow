@@ -8,6 +8,18 @@
 import SwiftUI
 
 struct MainView: View {
+    let songName: String?
+    let artistName: String?
+    let albumName: String?
+    let albumPoster: ImageResource?
+
+    init(songName: String? = nil, artistName: String? = nil, albumName: String? = nil, albumPoster: ImageResource? = nil) {
+        self.songName = songName
+        self.artistName = artistName
+        self.albumName = albumName
+        self.albumPoster = albumPoster
+    }
+    
     struct BounceButton: View {
         let systemName: String
         @State private var bounceID = UUID()
@@ -21,25 +33,32 @@ struct MainView: View {
             .buttonStyle(.plain)
         }
     }
+
     var body: some View {
         GlassEffectContainer {
             HStack(alignment: .top, spacing: 8) {
-                Image("Album poster")
-                    .frame(width: 100, height: 100, alignment: .leading)
-                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .stroke(.gray.opacity(0.1), lineWidth: 1)
-                    )
+                Group {
+                    if let albumPoster {
+                        Image(albumPoster)
+                    } else {
+                        Image(systemName: "music.note")
+                            .symbolRenderingMode(.hierarchical)
+                            .foregroundStyle(.tertiary)
+                    }
+                }
+                .frame(width: 100, height: 100, alignment: .center)
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(.gray.opacity(0.1), lineWidth: 1))
                 Spacer()
                 VStack(alignment: .leading, spacing: 10) {
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("Song name")
+                        Text(songName ?? "Song name")
                             .font(.headline)
-                        Text("Album name")
+                        Text(albumName ?? "Album name")
                             .font(.caption)
                             .foregroundStyle(.tertiary)
-                        Text("Artist name")
+                        Text(artistName ?? "Artist name")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
@@ -59,11 +78,11 @@ struct MainView: View {
                 .padding(10)
             }
             .padding(10)
-            .frame(width: 330, height: 160)
+            .frame(width: 330, height: 115)
         }
     }
 }
 
 #Preview {
-    MainView()
+    MainView(songName: "Hinata", artistName: "TIF", albumName: "1.6")
 }
