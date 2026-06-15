@@ -36,7 +36,7 @@ struct MainView: View {
 
     var body: some View {
         GlassEffectContainer {
-            HStack(alignment: .top, spacing: 8) {
+            HStack(alignment: .top) {
                 Group {
                     if let albumPoster {
                         Image(albumPoster)
@@ -46,13 +46,14 @@ struct MainView: View {
                             .foregroundStyle(.tertiary)
                     }
                 }
-                .frame(width: 100, height: 100, alignment: .center)
+                .frame(width: 110, height: 110, alignment: .center)
                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
                     .stroke(.gray.opacity(0.1), lineWidth: 1))
                 Spacer()
                 VStack(alignment: .leading, spacing: 10) {
-                    VStack(alignment: .leading, spacing: 0) {
+                    HStack{
+                        VStack(alignment: .leading, spacing: 0) {
                         Text(songName ?? "Song name")
                             .font(.headline)
                         Text(albumName ?? "Album name")
@@ -61,6 +62,7 @@ struct MainView: View {
                         Text(artistName ?? "Artist name")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
+                        }
                     }
                     HStack(spacing: 26) {
                         BounceButton(systemName: "backward.fill")
@@ -69,16 +71,12 @@ struct MainView: View {
                         BounceButton(systemName: "heart")
                     }
                     .font(.title2)
-                    Rectangle()
-                        .frame(height: 5)
-                        .cornerRadius(2.5)
-                        .foregroundStyle(.thinMaterial)
-                        .glassEffect()
+                    Slider(value: .constant(0.5), in: 0...1)
                 }
-                .padding(10)
+                .padding(8)
             }
             .padding(10)
-            .frame(width: 330, height: 115)
+            .frame(width: 330, height: 130)
         }
     }
 }
