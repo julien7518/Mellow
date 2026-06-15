@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  AppView.swift
 //  Mellow
 //
 //  Created by Julien Fernandes on 09/06/2026.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct AppView: View {
     let songName: String?
     let artistName: String?
     let albumName: String?
@@ -82,5 +82,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(songName: "Hinata", artistName: "TIF", albumName: "1.6")
+    AppView(songName: "Hinata", artistName: "TIF", albumName: "1.6")
 }

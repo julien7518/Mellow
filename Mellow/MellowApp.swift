@@ -11,7 +11,7 @@ import SwiftUI
 struct MellowApp: App {
     var body: some Scene {
         Window("Mellow", id: "MellowApp") {
-            MainView()
+            AppView()
                 .windowDismissBehavior(.disabled)
                 .windowFullScreenBehavior(.disabled)
                 .windowMinimizeBehavior(.disabled)
