@@ -23,7 +23,7 @@ struct MainView: View {
     }
     var body: some View {
         GlassEffectContainer {
-            HStack(alignment: .top, spacing: 8) {
+            HStack(alignment: .center, spacing: 8) {
                 Image("Album poster")
                     .frame(width: 100, height: 100, alignment: .leading)
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
@@ -59,7 +59,8 @@ struct MainView: View {
                 .padding(10)
             }
             .padding(10)
-            .frame(width: 330, height: 160)
+            .frame(width: 325, height: 115)
+            .glassEffect(in: .rect(cornerRadius: 10))
         }
     }
 }
