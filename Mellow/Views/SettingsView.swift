@@ -1,3 +1,10 @@
+//
+//  HelpMellowSettingsView.swift
+//  Mellow
+//
+//  Created by Julien Fernandes on 24/06/2026.
+//
+
 import SwiftUI
 
 struct SettingsView: View {

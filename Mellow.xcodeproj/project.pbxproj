@@ -12,7 +12,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F9B5349A2FD8A7C30021B48B /* Mellow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mellow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F95C15922FEC2CCC00A4AF45 /* Mellow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Mellow.app; path = /Users/julien/Developer/Swift/Mellow/build/Debug/Mellow.app; sourceTree = "<absolute>"; };
 		F9E44C252FDC196D006D345E /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		F9E44C272FDC19C6006D345E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,16 +42,7 @@
 				F9E44C252FDC196D006D345E /* LICENSE.md */,
 				F9E44C272FDC19C6006D345E /* README.md */,
 				F9B5349C2FD8A7C30021B48B /* Mellow */,
-				F9B5349B2FD8A7C30021B48B /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		F9B5349B2FD8A7C30021B48B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F9B5349A2FD8A7C30021B48B /* Mellow.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -76,7 +67,7 @@
 			packageProductDependencies = (
 			);
 			productName = Mellow;
-			productReference = F9B5349A2FD8A7C30021B48B /* Mellow.app */;
+			productReference = F95C15922FEC2CCC00A4AF45 /* Mellow.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +95,7 @@
 			mainGroup = F9B534912FD8A7C30021B48B;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = F9B5349B2FD8A7C30021B48B /* Products */;
+			productRefGroup = F9B534912FD8A7C30021B48B;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -259,7 +250,7 @@
 		F9B534A62FD8A7C40021B48B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = MellowIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -304,7 +295,7 @@
 		F9B534A72FD8A7C40021B48B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = MellowIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";

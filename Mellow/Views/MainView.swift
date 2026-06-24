@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var currentTime: Double = 50.0
+    @State private var isEditingSlider: Bool = false
+    
     struct BounceButton: View {
         let systemName: String
         @State private var bounceID = UUID()
@@ -17,13 +20,15 @@ struct MainView: View {
             }) {
                 Image(systemName: systemName)
                     .symbolEffect(.bounce, value: bounceID)
+                    .opacity(0.5)
             }
             .buttonStyle(.plain)
         }
     }
+    
     var body: some View {
         GlassEffectContainer {
-            HStack(alignment: .center, spacing: 8) {
+            HStack(alignment: .center) {
                 Image("Album poster")
                     .frame(width: 100, height: 100, alignment: .leading)
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
@@ -50,16 +55,19 @@ struct MainView: View {
                         BounceButton(systemName: "heart")
                     }
                     .font(.title2)
-                    Rectangle()
-                        .frame(height: 5)
-                        .cornerRadius(2.5)
-                        .foregroundStyle(.thinMaterial)
-                        .glassEffect()
+                    Slider(
+                        value: $currentTime,
+                        in: 0...100,
+                        onEditingChanged: { editing in
+                            isEditingSlider = editing
+                        }
+                    )
+                    .sliderThumbVisibility(.hidden)
                 }
                 .padding(10)
             }
             .padding(10)
-            .frame(width: 325, height: 115)
+            .frame(width: 310, height: 115)
             .glassEffect(in: .rect(cornerRadius: 10))
         }
     }
