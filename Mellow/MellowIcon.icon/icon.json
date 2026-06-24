@@ -1,36 +1,31 @@
 {
-  "fill" : "automatic",
-  "groups" : [
+  "fill": "automatic",
+  "groups": [
     {
-      "layers" : [
+      "layers": [
         {
-          "fill" : {
-            "solid" : "display-p3:1.00000,0.67340,0.17888,1.00000"
+          "fill": {
+            "solid": "display-p3:1.00000,0.67340,0.17888,1.00000"
           },
-          "image-name" : "mellow.png",
-          "name" : "mellow",
-          "position" : {
-            "scale" : 1.56,
-            "translation-in-points" : [
-              -8.580000000000041,
-              46.799999999999955
-            ]
+          "image-name": "mellow.png",
+          "name": "mellow",
+          "position": {
+            "scale": 1.56,
+            "translation-in-points": [-8.580000000000041, 46.799999999999955]
           }
         }
       ],
-      "shadow" : {
-        "kind" : "neutral",
-        "opacity" : 0.5
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.5
       },
-      "translucency" : {
-        "enabled" : true,
-        "value" : 0.5
+      "translucency": {
+        "enabled": true,
+        "value": 0.5
       }
     }
   ],
-  "supported-platforms" : {
-    "squares" : [
-      "macOS"
-    ]
+  "supported-platforms": {
+    "squares": ["macOS"]
   }
 }

@@ -8,9 +8,26 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var currentTime: Double = 50.0
+    let songName: String?
+    let artistName: String?
+    let albumName: String?
+    let albumPoster: ImageResource?
+    let totalTime: Double?
+
+    init(
+        songName: String? = nil, artistName: String? = nil, albumName: String? = nil,
+        albumPoster: ImageResource? = nil, totalTime: Double? = nil
+    ) {
+        self.songName = songName
+        self.artistName = artistName
+        self.albumName = albumName
+        self.albumPoster = albumPoster
+        self.totalTime = totalTime
+    }
+
+    @State private var currentTime: Double = 0.0
     @State private var isEditingSlider: Bool = false
-    
+
     struct BounceButton: View {
         let systemName: String
         @State private var bounceID = UUID()
@@ -25,30 +42,38 @@ struct MainView: View {
             .buttonStyle(.plain)
         }
     }
-    
+
     var body: some View {
         GlassEffectContainer {
             HStack(alignment: .center) {
-                Image("Album poster")
-                    .frame(width: 100, height: 100, alignment: .leading)
-                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .stroke(.gray.opacity(0.1), lineWidth: 1)
-                    )
-                Spacer()
+                Group {
+                    if let albumPoster {
+                        Image(albumPoster)
+                    } else {
+                        Image(systemName: "music.note")
+                            .symbolRenderingMode(.hierarchical)
+                            .foregroundStyle(.tertiary)
+                            .controlSize(.extraLarge)
+                    }
+                }
+                .frame(width: 100, height: 100, alignment: .center)
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .stroke(.gray.opacity(0.1), lineWidth: 1)
+                )
                 VStack(alignment: .leading, spacing: 10) {
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("Song name")
+                        Text(songName ?? "Song name")
                             .font(.headline)
-                        Text("Album name")
+                        Text(albumName ?? "Album name")
                             .font(.caption)
                             .foregroundStyle(.tertiary)
-                        Text("Artist name")
+                        Text(artistName ?? "Artist name")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
-                    HStack(spacing: 26) {
+                    HStack(spacing: 30) {
                         BounceButton(systemName: "backward.fill")
                         BounceButton(systemName: "play.fill")
                         BounceButton(systemName: "forward.fill")
@@ -57,16 +82,23 @@ struct MainView: View {
                     .font(.title2)
                     Slider(
                         value: $currentTime,
-                        in: 0...100,
-                        onEditingChanged: { editing in
-                            isEditingSlider = editing
-                        }
-                    )
+                        in: 0...(totalTime ?? 0.0),
+                    ) {
+                    } minimumValueLabel: {
+                        Text(currentTime.toMMSS())
+                    } maximumValueLabel: {
+                        Text((totalTime ?? 0.0).toMMSS())
+                    } onEditingChanged: {
+                        editing in
+                        isEditingSlider =
+                            editing
+                    }
                     .sliderThumbVisibility(.hidden)
+
                 }
-                .padding(10)
+                .padding(4)
             }
-            .padding(10)
+            .padding(8)
             .frame(width: 310, height: 115)
             .glassEffect(in: .rect(cornerRadius: 10))
         }
@@ -74,5 +106,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    MainView(songName: "HINATA", artistName: "TIF", albumName: "1.6", totalTime: 134)
 }

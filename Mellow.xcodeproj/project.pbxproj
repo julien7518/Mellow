@@ -12,7 +12,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F95C15922FEC2CCC00A4AF45 /* Mellow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Mellow.app; path = /Users/julien/Developer/Swift/Mellow/build/Debug/Mellow.app; sourceTree = "<absolute>"; };
+		F921115F2FEC3DE2006921A2 /* Mellow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mellow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E44C252FDC196D006D345E /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		F9E44C272FDC19C6006D345E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,6 +42,7 @@
 				F9E44C252FDC196D006D345E /* LICENSE.md */,
 				F9E44C272FDC19C6006D345E /* README.md */,
 				F9B5349C2FD8A7C30021B48B /* Mellow */,
+				F921115F2FEC3DE2006921A2 /* Mellow.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,7 +68,7 @@
 			packageProductDependencies = (
 			);
 			productName = Mellow;
-			productReference = F95C15922FEC2CCC00A4AF45 /* Mellow.app */;
+			productReference = F921115F2FEC3DE2006921A2 /* Mellow.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

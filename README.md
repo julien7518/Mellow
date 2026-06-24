@@ -1,1 +1,1 @@
-# Mellow : The better music player you deserve
+# Mellow : The music player you really deserve
