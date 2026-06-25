@@ -62,7 +62,7 @@ struct MainView: View {
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
                         .stroke(.gray.opacity(0.1), lineWidth: 1)
                 )
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading) {
                     VStack(alignment: .leading, spacing: 0) {
                         Text(songName ?? "Song name")
                             .font(.headline)
@@ -73,13 +73,18 @@ struct MainView: View {
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
-                    HStack(spacing: 30) {
+                    Spacer()
+                    HStack() {
                         BounceButton(systemName: "backward.fill")
+                        Spacer()
                         BounceButton(systemName: "play.fill")
+                        Spacer()
                         BounceButton(systemName: "forward.fill")
+                        Spacer()
                         BounceButton(systemName: "heart")
                     }
                     .font(.title2)
+                    Spacer()
                     Slider(
                         value: $currentTime,
                         in: 0...(totalTime ?? 0.0),
@@ -100,11 +105,11 @@ struct MainView: View {
             }
             .padding(8)
             .frame(width: 310, height: 115)
-            .glassEffect(in: .rect(cornerRadius: 10))
+            .glassEffect(.regular, in: .rect(cornerRadius: 10))
         }
     }
 }
 
 #Preview {
-    MainView(songName: "HINATA", artistName: "TIF", albumName: "1.6", totalTime: 134)
+    MainView(songName: "HINATA", artistName: "TIF", albumName: "1.6", totalTime: 175)
 }
